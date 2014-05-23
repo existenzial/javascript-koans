@@ -33,7 +33,7 @@ describe("About Objects", function() {
   });
 
   it("should confirm that when a function is attached to an object, 'this' refers to the object", function () {
-    var currentDate = new Date()
+    var currentDate = new Date();
     var currentYear = (currentDate.getFullYear());
     var meglomaniac = { 
       mastermind: "James Wood", 
@@ -59,14 +59,12 @@ describe("About Objects", function() {
     });
 
     it("should have the bomb", function() {
-
       var hasBomb = "theBomb" in meglomaniac;
      
       expect(hasBomb).toBe(FILL_ME_IN);
     });
 
     it("should not have the detonator however", function() {
-
       var hasDetonator = "theDetonator" in meglomaniac;
      
       expect(hasDetonator).toBe(FILL_ME_IN);
