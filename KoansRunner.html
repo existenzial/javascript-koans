@@ -20,18 +20,16 @@
   <script src="koans/AboutHigherOrderFunctions.js"></script>
   <script src="koans/AboutInheritance.js"></script>
   <script src="koans/AboutApplyingWhatWeHaveLearnt.js"></script>
-
 </head>
+
 <body>
-
-<script>
-  jasmine.getEnv().addReporter(new JsKoansReporter());
-  jasmine.getEnv().execute();
-  var passedTestHider = function(){
-    document.getElementById("__jsKoans_showPassed__").click()
-  }
-  // setTimeout(passedTestHider, 100) //uncomment me in order to hide passed tests by default
-</script>
-
+  <script>
+    jasmine.getEnv().addReporter(new JsKoansReporter());
+    jasmine.getEnv().execute();
+    var passedTestHider = function(){
+      document.getElementById("__jsKoans_showPassed__").click()
+    }
+    // setTimeout(passedTestHider, 100) //uncomment me in order to hide passed tests by default
+  </script>
 </body>
 </html>

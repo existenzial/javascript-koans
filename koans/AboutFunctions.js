@@ -18,6 +18,7 @@ describe("About Functions", function() {
     
     function overrideMessage() {
       var message = "Inner";
+
       return message;
     }
     
@@ -26,22 +27,24 @@ describe("About Functions", function() {
     expect(message).toBe(FILL_ME_IN);
   });
 
-  it("should have lexical scoping", function () {
+  it("should have lexical scoping", function() {
     var variable = "top-level";
+
     function parentfunction() {
-        var variable = "local";
+      var variable = "local";
+
       function childfunction() {
-          return variable;
+        return variable;
       }
       return childfunction();
     }
     expect(parentfunction()).toBe(FILL_ME_IN);
   });
 
-  it("should use lexical scoping to synthesise functions", function () {
+  it("should use lexical scoping to synthesise functions", function() {
     
     function makeIncreaseByFunction(increaseByAmount) {
-      return function (numberToIncrease) {
+      return function(numberToIncrease) {
         return numberToIncrease + increaseByAmount;
       };
     }
@@ -52,7 +55,7 @@ describe("About Functions", function() {
     expect(increaseBy3(10) + increaseBy5(10)).toBe(FILL_ME_IN);
   });
 
-  it("should allow extra function arguments", function () {
+  it("should allow extra function arguments", function() {
     
     function returnFirstArg(firstArg) {
       return firstArg;
@@ -68,6 +71,7 @@ describe("About Functions", function() {
     
     function returnAllArgs() {
       var argsArray = [];
+
       for (var i = 0; i < arguments.length; i += 1) {
         argsArray.push(arguments[i]);
       }
@@ -77,13 +81,12 @@ describe("About Functions", function() {
     expect(returnAllArgs("first", "second", "third")).toBe(FILL_ME_IN);
   });
 
-  it("should pass functions as values", function () {
-
-    var appendRules = function (name) {
+  it("should pass functions as values", function() {
+    var appendRules = function(name) {
       return name + " rules!";
     };
     
-    var appendDoubleRules = function (name) {
+    var appendDoubleRules = function(name) {
       return name + " totally rules!";
     };
     
@@ -95,12 +98,12 @@ describe("About Functions", function() {
       
   });
 
-  it("should use function body as a string", function () {
+  it("should use function body as a string", function() {
     var add = new Function("a", "b", "return a + b;");
     expect(add(1, 2)).toBe(FILL_ME_IN);
      
-    var multiply = function (a, b) {
-      //An internal comment
+    var multiply = function(a, b) {
+      // An internal comment
       return a * b;
     };
     expect(multiply.toString()).toBe(FILL_ME_IN);
